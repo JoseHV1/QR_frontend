@@ -1,0 +1,21 @@
+<div class="card-size rounded shadow bg-indigo-white bg-md-indigo-white">
+  <div class="row m-0 p-3 p-md-4">
+    <div class="col-md-6 pe-md-4 ps-md-0 pt-4 mb-5 mb-md-0">
+      <h2 class="text-center text-white mt-2 mt-md-5 mb-4">GENERATE</h2>
+      <form>
+        <app-input [placeholder]="'Enter a URL'"/>
+
+        <div class="d-grid gap-2 mt-3">
+          <app-button [text]="'Generate'" />
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <h5 class="text-center text-md-dark text-white mb-2">QR Generated</h5>
+      <div class="d-flex align-items-center justify-content-center">
+        <app-image [src]="image_qr"/>
+      </div>
+    </div>
+  </div>
+</div>

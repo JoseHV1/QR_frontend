@@ -8,6 +8,5 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'QR_frontend';
-}
+
+export class AppComponent {}

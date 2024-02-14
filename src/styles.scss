@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+.bg-indigo-white{
+    background-image: linear-gradient(to bottom, #aab1fd  50%, #aab1fd 50%);
+}
+
+@media (min-width: 768px) {
+    .md-shadow {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+    .md-shadow-sm {
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    }
+
+    .bg-md-indigo-white{
+        background-image: linear-gradient(to right, #606dff  50%, white 50%); 
+        height: 24rem;
+    }
+}

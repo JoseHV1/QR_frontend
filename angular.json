@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -99,8 +100,46 @@
             ],
             "scripts": []
           }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "QR_frontend:ionic-cordova-build",
+            "devServerTarget": "QR_frontend:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "QR_frontend:ionic-cordova-build:production",
+              "devServerTarget": "QR_frontend:serve:production"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "QR_frontend:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "QR_frontend:build:production"
+            }
+          }
         }
       }
+    }
+  },
+  "cli": {
+    "analytics": false,
+    "schematicCollections": [
+      "@ionic/angular-toolkit"
+    ]
+  },
+  "schematics": {
+    "@ionic/angular-toolkit:component": {
+      "styleext": "scss"
+    },
+    "@ionic/angular-toolkit:page": {
+      "styleext": "scss"
     }
   }
 }
