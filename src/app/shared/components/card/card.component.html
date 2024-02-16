@@ -2,11 +2,25 @@
   <div class="row m-0 p-3 p-md-4">
     <div class="col-md-6 pe-md-4 ps-md-0 pt-4 mb-5 mb-md-0">
       <h2 class="text-center text-white mt-2 mt-md-5 mb-4">GENERATE</h2>
-      <form>
-        <app-input [placeholder]="'Enter a URL'"/>
+      <form [formGroup]="form" (ngSubmit)="sendUrl()">
+        <div class="mb-3">
+          <app-input [placeholder]="'Enter a URL'" formControlName="url"/>
 
-        <div class="d-grid gap-2 mt-3">
-          <app-button [text]="'Generate'" />
+          @if(form.get('url')?.dirty && form.get('url')?.invalid){ 
+            <div class="alert alert-danger mt-2 mb-1 text-center">
+                @if(form.get('url')?.errors && form.get('url')?.hasError('required')){ 
+                  Please provide url
+                }
+
+                @if(form.get('url')?.errors && form.get('url')?.hasError('pattern')){ 
+                  Please provide valid url
+                }
+            </div>
+          }
+        </div>
+
+        <div class="d-grid gap-2">
+          <app-button [text]="'Generate'" [disable]="form.invalid" />
         </div>
       </form>
     </div>

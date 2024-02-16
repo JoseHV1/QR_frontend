@@ -1,1 +1,2 @@
-<input type="url" name="url_text" class="form-control my-2 rounded-pill" [placeholder]="placeholder" required>
+<input type="url" name="url_text" class="form-control my-2 rounded-pill" [placeholder]="placeholder"
+    (ngModelChange)="changeText($event)" [(ngModel)]="value" required>

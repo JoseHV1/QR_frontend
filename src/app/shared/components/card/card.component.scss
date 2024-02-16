@@ -2,6 +2,11 @@
     width: 816px;
 }
 
+.alert{
+    padding: 3px;
+    font-size: 12px;
+}
+
 @media (max-width: 1199px) {
     .card-size{
         width: 725px !important;

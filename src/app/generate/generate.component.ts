@@ -10,6 +10,4 @@ import { CardComponent } from '../shared/components/card/card.component';
   styleUrl: './generate.component.scss'
 })
 
-export class GenerateComponent {
-
-}
+export class GenerateComponent {}
