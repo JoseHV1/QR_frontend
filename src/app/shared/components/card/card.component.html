@@ -1,6 +1,6 @@
-<div class="card-size rounded shadow bg-indigo-white bg-md-indigo-white">
+<div class="card-size rounded shadow bg-indigo-white bg-md-indigo-white mt-2">
   <div class="row m-0 p-3 p-md-4">
-    <div class="col-md-6 pe-md-4 ps-md-0 pt-4 mb-5 mb-md-0">
+    <div class="col-md-6 pe-md-4 ps-md-0 pt-4 mb-4 mb-md-0">
       <h2 class="text-center text-white mt-2 mt-md-5 mb-4">GENERATE</h2>
       <form [formGroup]="form" (ngSubmit)="sendUrl()">
         <div class="mb-3">
@@ -25,8 +25,10 @@
       </form>
     </div>
 
-    <div class="col-md-6">
-      <h5 class="text-center text-md-dark text-white mb-2">QR Generated</h5>
+    <div class="col-md-6 pt-2">
+      @if (image_qr !== 'assets/images/qr_code.png') {
+        <h5 class="text-center mb-2">QR Generated</h5>
+      }
       <div class="d-flex align-items-center justify-content-center">
         <app-image [src]="image_qr"/>
       </div>

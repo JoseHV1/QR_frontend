@@ -26,8 +26,6 @@ export class InputComponent  implements ControlValueAccessor {
 
   changeText($event: any): void {
     this.onChange($event);
-    console.log($event);
-    
   }
 
   writeValue(value: string): void {

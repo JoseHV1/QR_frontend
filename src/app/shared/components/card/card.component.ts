@@ -10,6 +10,7 @@ import {
 } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { ResponseModel } from '../../models/response.model';
+import { UiService } from '../../services/ui.service';
 
 @Component({
   selector: 'app-card',
@@ -27,7 +28,7 @@ export class CardComponent {
   image_qr: string = 'assets/images/qr_code.png';
   form!: FormGroup;
 
-  constructor(private _api: ApiService) {
+  constructor(private _api: ApiService, private _ui: UiService) {
     this.form = new FormGroup({
       url: new FormControl('', [
         Validators.required,
@@ -39,8 +40,15 @@ export class CardComponent {
   }
 
   sendUrl() {
-    this._api.generateQr(this.form.value).subscribe((resp: ResponseModel) => {
-      this.image_qr = resp.image;
-    });
+    this._api
+      .generateQr(this.form.value)
+      .subscribe((resp: ResponseModel) => {
+        this._ui.showAlert();
+        this.image_qr = resp.image;
+
+        setTimeout(() => {
+          this._ui.hideAlert();
+        }, 3000);
+      });
   }
 }
